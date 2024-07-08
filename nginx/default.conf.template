@@ -5,7 +5,7 @@ server {
 	server_name ${NGINX_HOST} www.${NGINX_HOST};
 
 	location / {
-		proxy_pass http://web-app:3000/;
+		proxy_pass http://web-app:8080/;
 	}
 
 	location ~ /.well-known/acme-challenge {
