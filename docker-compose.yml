@@ -2,12 +2,12 @@ version: "3.1"
 
 services:
   web-app:
-    image: "ghcr.io/yashgo0018/maci-key-manager-server:latest"
-    container_name: webapp
+    image: "ghcr.io/depinbox/offchain-gateway-rs:latest"
+    container_name: offchain-gateway
     networks:
       - app-network
     env_file:
-      - ./.web-app.env
+      - ./.gateway.env
     restart: unless-stopped
   nginx-server:
     image: nginx:mainline-alpine
