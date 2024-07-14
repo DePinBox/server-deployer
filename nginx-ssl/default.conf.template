@@ -2,7 +2,7 @@ server {
 	listen 80;
 	listen [::]:80;
 
-	server_name ${NGINX_HOST} www.${NGINX_HOST};
+	server_name ${NGINX_HOST};
 
 	location ~ /.well-known/acme-challenge {
 		allow all;
@@ -18,7 +18,7 @@ server {
 	listen 443 ssl;
 	listen [::]:443 ssl;
 
-	server_name ${NGINX_HOST} www.${NGINX_HOST};
+	server_name ${NGINX_HOST};
 
 	http2 on;
 	

@@ -3,7 +3,7 @@ version: "3.1"
 services:
   web-app:
     image: "ghcr.io/depinbox/offchain-gateway-rs:latest"
-    container_name: offchain-gateway
+    container_name: web-app
     networks:
       - app-network
     env_file:
@@ -37,7 +37,7 @@ services:
       - web-root:/var/www/html
     depends_on:
       - nginx-server
-    command: certonly --webroot --webroot-path=/var/www/html --email contact@yashgoyal.dev --agree-tos --no-eff-email --${CERTBOT_COMMAND_FLAG} -d ${SERVER_URL} -d www.${SERVER_URL}
+    command: certonly --webroot --webroot-path=/var/www/html --email contact@yashgoyal.dev --agree-tos --no-eff-email --${CERTBOT_COMMAND_FLAG} -d ${SERVER_URL}
 
 networks:
   app-network:
